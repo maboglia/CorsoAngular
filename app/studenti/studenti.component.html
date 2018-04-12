@@ -1,0 +1,40 @@
+<div class="row col-md-12">
+
+
+    <div class="col-md-4">
+        <ul class="studenti list-group">
+
+
+            <h2>studenti</h2>
+            <li *ngFor="let studente of studenti" (click)="onSelect(studente)" [class.selected]="studente === selectedStudente" class="list-group-item">
+                {{studente.nome}} {{studente.cognome}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8">
+        <div *ngIf="selectedStudente">
+
+            <h2>{{ selectedStudente.nome | titlecase }} {{ selectedStudente.cognome | uppercase }}
+                <span (click)="mostraFaccia()" class="badge badge-danger">Foto</span>
+            </h2>
+
+            <img *ngIf="mostraFoto" src="./assets/{{selectedStudente.cognome}}.jpg" alt="foto di {{selectedStudente.cognome}}" class="rounded mx-auto d-block">
+
+            <div class="form-group">
+                <label for="nome">nome:</label><input [(ngModel)]="selectedStudente.nome" placeholder="nome" id="nome" name="nome" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="nome">cognome:</label><input [(ngModel)]="selectedStudente.cognome" placeholder="cognome" id="cognome" name="cognome" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="year">year:</label><input [(ngModel)]="selectedStudente.year" placeholder="year" id="year" name="year" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="anni">anni:</label><input [(ngModel)]="selectedStudente.anni" placeholder="anni" id="anni" name="eta" class="form-control">
+            </div>
+        </div>
+
+    </div>
+
+</div>

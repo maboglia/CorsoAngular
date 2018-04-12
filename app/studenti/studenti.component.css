@@ -1,0 +1,34 @@
+/* studentiComponent's private CSS styles */
+
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+
+.studenti {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+}
+
+.studenti li {
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.studenti li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+.studenti li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+
+.studenti .text {
+    position: relative;
+    top: -3px;
+}
